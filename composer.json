@@ -1,0 +1,31 @@
+{
+    "name" : "goetas-webservices/xsd-php-cs-fixer-config",
+    "description" : "PHP CS Fixer configuration for XSD projects",
+    "license" : "MIT",
+    "authors" : [
+        {
+            "name" : "Asmir Mustafic",
+            "email" : "goetas@lignano.it"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "require" : {
+        "php": ">=5.5",
+        "friendsofphp/php-cs-fixer": "^2.2"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "GoetasWebservices\\CS\\": "./php-cs-fixer/"
+        }
+    },
+    "scripts": {
+        "tests": [
+            "phpstan analyse -l7 src",
+            "psalm",
+            "phpcpd ./src/",
+            "php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --verbose --dry-run"
+        ]
+    }
+}
