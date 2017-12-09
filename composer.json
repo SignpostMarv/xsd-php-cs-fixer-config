@@ -15,6 +15,9 @@
         "php": "^7.0",
         "friendsofphp/php-cs-fixer": "^2.10"
     },
+    "require-dev" : {
+        "phpstan/phpstan": "^0.9.1"
+    },
     "autoload" : {
         "psr-4" : {
             "GoetasWebservices\\CS\\": "./php-cs-fixer/"
@@ -22,7 +25,7 @@
     },
     "scripts": {
         "tests": [
-            "phpstan analyse -l7 src",
+            "php ./vendor/phpstan/phpstan/bin/phpstan analyse -l7 src",
             "psalm",
             "phpcpd ./src/",
             "php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --verbose --dry-run"
