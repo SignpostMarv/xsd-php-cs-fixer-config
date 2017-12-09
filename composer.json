@@ -29,7 +29,7 @@
             "php ./vendor/phpstan/phpstan/bin/phpstan analyse -c ./phpstan.neon src",
             "psalm",
             "php ./vendor/sebastian/phpcpd/phpcpd ./src/",
-            "php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --verbose --dry-run"
+            "php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --verbose --allow-risky=yes --dry-run"
         ]
     }
 }
