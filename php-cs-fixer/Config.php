@@ -9,12 +9,14 @@ use PhpCsFixer\Finder as DefaultFinder;
 
 class Config extends BaseConfig
 {
-    const DEFAULT_RULES = [
+    public static function DEFAULT_RULES ()
+    {
+        return [
         '@Symfony' => true,
-        'yoda_style' => false,
         'phpdoc_to_comment' => false, // required for type hinting
         'phpdoc_var_without_name' => false, // required for type hinting
     ];
+    }
 
     public function __construct(array $inPaths)
     {
@@ -31,7 +33,7 @@ class Config extends BaseConfig
         );
 
         $this->setUsingCache(true);
-        $this->setRules(static::DEFAULT_RULES);
+        $this->setRules(static::RuntimeResolveRules());
 
         /**
         * @var DefaultFinder $finder
@@ -54,6 +56,6 @@ class Config extends BaseConfig
     */
     protected static function RuntimeResolveRules()
     {
-        return static::DEFAULT_RULES;
+        return static::DEFAULT_RULES();
     }
 }
