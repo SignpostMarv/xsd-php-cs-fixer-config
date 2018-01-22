@@ -27,8 +27,9 @@
     },
     "scripts": {
         "tests": [
-            "php ./vendor/phpstan/phpstan/bin/phpstan analyse -c ./phpstan.neon src",
-            "php ./vendor/sebastian/phpcpd/phpcpd ./src/",
+            "php ./vendor/phpstan/phpstan/bin/phpstan analyse -c ./phpstan.neon ./php-cs-fixer",
+            "psalm",
+            "php ./vendor/sebastian/phpcpd/phpcpd ./php-cs-fixer/",
             "php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --verbose --allow-risky=yes --dry-run"
         ]
     }
