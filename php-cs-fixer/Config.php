@@ -30,7 +30,7 @@ class Config extends BaseConfig
                 preg_replace(
                     '/([a-z0-9])([A-Z])/',
                     '$1 $2',
-                    static::class
+                    get_called_class()
                 )
             )
         );
@@ -44,6 +44,11 @@ class Config extends BaseConfig
         $finder = $this->getFinder();
         $this->setFinder(array_reduce(
             $inPaths,
+            /**
+            * @param string $directory
+            *
+            * @return DefaultFinder
+            */
             function (DefaultFinder $finder, $directory) {
                 if (is_file($directory) === true) {
                     return $finder->append([$directory]);
@@ -56,6 +61,8 @@ class Config extends BaseConfig
 
     /**
     * Resolve rules at runtime.
+    *
+    * @return array
     */
     protected static function RuntimeResolveRules()
     {
