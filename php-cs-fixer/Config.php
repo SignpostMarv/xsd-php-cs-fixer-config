@@ -31,7 +31,7 @@ class Config extends BaseConfig
         );
 
         $this->setUsingCache(true);
-        $this->setRules(static::DEFAULT_RULES);
+        $this->setRules(static::RuntimeResolveRules());
 
         /**
         * @var DefaultFinder $finder
