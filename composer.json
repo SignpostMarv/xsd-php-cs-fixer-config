@@ -22,9 +22,9 @@
     },
     "scripts": {
         "tests": [
-            "phpstan analyse -l7 src",
+            "phpstan analyse -l7 php-cs-fixer",
             "psalm",
-            "phpcpd ./src/",
+            "phpcpd ./php-cs-fixer/",
             "php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --verbose --dry-run"
         ]
     }
