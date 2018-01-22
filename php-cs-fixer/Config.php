@@ -12,10 +12,10 @@ class Config extends BaseConfig
     public static function DEFAULT_RULES ()
     {
         return [
-        '@Symfony' => true,
-        'phpdoc_to_comment' => false, // required for type hinting
-        'phpdoc_var_without_name' => false, // required for type hinting
-    ];
+            '@Symfony' => true,
+            'phpdoc_to_comment' => false, // required for type hinting
+            'phpdoc_var_without_name' => false, // required for type hinting
+        ];
     }
 
     public function __construct(array $inPaths)
