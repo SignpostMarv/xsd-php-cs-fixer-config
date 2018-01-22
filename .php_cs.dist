@@ -12,6 +12,4 @@ require_once __DIR__.'/vendor/autoload.php';
 return new Config([
     __FILE__,
     (__DIR__.'/php-cs-fixer/'),
-    (__DIR__.'/src/'),
-    (__DIR__.'/tests/'),
 ]);
