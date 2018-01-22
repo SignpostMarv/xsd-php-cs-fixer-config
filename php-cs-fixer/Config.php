@@ -61,6 +61,6 @@ class Config extends BaseConfig
     */
     protected static function RuntimeResolveRules()
     {
-        return static::DEFAULT_RULES;
+        return (array) static::DEFAULT_RULES;
     }
 }
