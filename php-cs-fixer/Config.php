@@ -5,7 +5,6 @@ declare(strict_types=1);
  * @author SignpostMarv
  */
 
-
 namespace GoetasWebservices\CS;
 
 use PhpCsFixer\Config as BaseConfig;
@@ -69,7 +68,7 @@ class Config extends BaseConfig
      *
      * @return array<string, bool>
      */
-    protected static function RuntimeResolveRules() : array
+    protected static function RuntimeResolveRules(): array
     {
         return (array) static::DEFAULT_RULES;
     }
