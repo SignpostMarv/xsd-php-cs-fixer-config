@@ -9,6 +9,9 @@ use PhpCsFixer\Finder as DefaultFinder;
 
 class Config extends BaseConfig
 {
+    /**
+    * @return array
+    */
     public static function DEFAULT_RULES ()
     {
         return [
