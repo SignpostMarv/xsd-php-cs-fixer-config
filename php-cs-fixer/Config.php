@@ -13,6 +13,9 @@ use PhpCsFixer\Finder as DefaultFinder;
 
 class Config extends BaseConfig
 {
+    /**
+     * @var array<string, bool>
+     */
     const DEFAULT_RULES = [
         '@Symfony' => true,
         '@PHP70Migration' => true,
@@ -63,9 +66,11 @@ class Config extends BaseConfig
 
     /**
      * Resolve rules at runtime.
+     *
+     * @return array<string, bool>
      */
     protected static function RuntimeResolveRules() : array
     {
-        return static::DEFAULT_RULES;
+        return (array) static::DEFAULT_RULES;
     }
 }
