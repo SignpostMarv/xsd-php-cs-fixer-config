@@ -2,6 +2,7 @@
 /**
 * @author SignpostMarv
 */
+
 namespace GoetasWebservices\CS;
 
 use PhpCsFixer\Config as BaseConfig;
@@ -34,20 +35,21 @@ class Config extends BaseConfig
         $this->setRules(static::RuntimeResolveRules());
 
         /**
-        * @var DefaultFinder $finder
-        */
+         * @var DefaultFinder $finder
+         */
         $finder = $this->getFinder();
         $this->setFinder(array_reduce(
             $inPaths,
             /**
-            * @param string $directory
-            *
-            * @return DefaultFinder
-            */
+             * @param string $directory
+             *
+             * @return DefaultFinder
+             */
             function (DefaultFinder $finder, $directory) {
                 if (is_file($directory) === true) {
                     return $finder->append([$directory]);
                 }
+
                 return $finder->in($directory);
             },
             $finder->ignoreUnreadableDirs()
@@ -55,10 +57,10 @@ class Config extends BaseConfig
     }
 
     /**
-    * Resolve rules at runtime.
-    *
-    * @return array
-    */
+     * Resolve rules at runtime.
+     *
+     * @return array
+     */
     protected static function RuntimeResolveRules()
     {
         return (array) static::DEFAULT_RULES;
